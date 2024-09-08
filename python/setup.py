@@ -12,7 +12,12 @@ setuptools.setup(
     description="xxx",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    package_dir={"": "miaolib"},
-    packages=setuptools.find_packages(where="miaolib"),
+    package_dir={"": "src"},
+    packages=setuptools.find_packages(where="src"),
+    install_requires=[
+        'aiohttp>=3.9.2',
+        'async_timeout>=4.0.2',
+        'loguru>=0.6.0'
+    ],
     python_requires=">=3.9",
 )
