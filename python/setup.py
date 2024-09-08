@@ -5,11 +5,11 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="miaospeedlib",
-    version="0.0.1",
+    version="0.1.0",
     author="airportr",
-    url='xxx',
-    author_email="xxx",
-    description="xxx",
+    url='https://github.com/AirportR/miaolib',
+    author_email="airportroster@gmail.com",
+    description="MiaoSpeed Client Library Implementations for Python.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     package_dir={"": "src"},

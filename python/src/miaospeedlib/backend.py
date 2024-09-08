@@ -113,7 +113,7 @@ class MiaoSpeed:
         self.SlaveRequest.Challenge = signed_req
         return signed_req
 
-    async def start(self, slavereq: KoiSlaveRequest = None):
+    async def start(self):
         start_time = time.strftime("%Y-%m-%dT%H-%M-%S", time.localtime())
         resdata = {}
         conn_key = f"{self.host}:{self.port}:{start_time}"
