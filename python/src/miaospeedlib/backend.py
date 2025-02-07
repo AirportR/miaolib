@@ -302,21 +302,6 @@ async def miaospeed_client(slavereq: KoiSlaveRequest):
         slavereq.slave.path = "/"
     srme_list = build_req_matrix(slavereq.items)
     slave_option = slavereq.slave.option
-    # if slavereq.runtime.speedThreads:
-    #     slave_option.downloadThreading = slavereq.runtime.speedThreads
-    # if slavereq.runtime.pingURL:
-    #     slave_option.pingAddress = slavereq.runtime.pingURL
-    # if slavereq.runtime.duration:
-    #     slave_option.downloadDuration = slavereq.runtime.duration
-    # if slavereq.runtime.speedFiles:
-    #     slave_option.downloadURL = slavereq.runtime.speedFiles
-    # if slavereq.runtime.stunURL:
-    #     slave_option.stunURL = slavereq.runtime.stunURL
-
-    # if slavereq.runtime.ipstack is None:
-    #     slavereq.runtime.ipstack = CONFIG.runtime.ipstack
-    # if slavereq.runtime.entrance is None:
-    #     slavereq.runtime.entrance = CONFIG.runtime.entrance
     srcfg = SlaveRequestConfigs.from_option(slave_option).merge_runtime(slavereq.runtime)
     slopt = SlaveRequestOptions(Matrices=srme_list)
     msreq = SlaveRequest(
@@ -340,7 +325,7 @@ async def miaospeed_client(slavereq: KoiSlaveRequest):
     ms = MiaoSpeed(slavereq.slave, msreq, slavereq.proxies)
 
     try:
-        result, _ = await ms.start(slavereq)
+        result, _ = await ms.start()
         if 'error' in result:
             return
         # result = ResultCleaner(result, sf).start(slavereq.runtime.sort)

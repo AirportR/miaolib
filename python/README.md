@@ -123,3 +123,7 @@ print("Your Clash nodes:\n", nodes)
 result, _ = miaospeed_test(nodes)
 print("result of miaospeed:\n", result)
 ```
+
+# Tips
+
+- You shoud rewrite the MiaoSpeed.start() method to fit your own test logic.
