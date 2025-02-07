@@ -36,13 +36,13 @@ jobs:
       run: twine upload dist/*
 
     # 可选：发布 GitHub Release
-    - name: Create GitHub Release
-      uses: softprops/action-gh-release@v1
-      with:
-        files: ./python/dist/*
-        body: |
-          Release ${{ github.ref_name }}
-          
-          Please refer to [CHANGELOG.md](./python/CHANGELOG.md) for details.
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#    - name: Create GitHub Release
+#      uses: softprops/action-gh-release@v1
+#      with:
+#        files: ./python/dist/*
+#        body: |
+#          Release ${{ github.ref_name }}
+#
+#          Please refer to [CHANGELOG.md](./python/CHANGELOG.md) for details.
+#      env:
+#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
